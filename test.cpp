@@ -15,8 +15,8 @@ void test(string M, const KeySet& keys)
     string R = decryption(private_key, C);
     cout << "Translated : " << R << endl;
 
-    if(plain == R) cout<<"Translate success"<<endl;
-    else cout<<"Translate failure"<<endl;
+    if(plain == R) cout<<"Translate SUCCESS"<<endl;
+    else cout<<"Translate FAILURE"<<endl;
     
     cout<<endl;
 }
