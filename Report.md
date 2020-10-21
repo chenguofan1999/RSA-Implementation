@@ -51,7 +51,7 @@ e * d mod φ(N) = 1
 
 对于输入和输出的**字节流 (Octet stream)** ，只需要用含 '1' - 'F' 16种字符的 string 来表示。
 
-在加密函数内部，数据之间的计算显然是在整数的形式下进行的，同时 RSA 算法要求密钥是极大的大整数(数百甚至数千位)，因此需要选用一种能表示无限位数的整数，且实现了乘法、取模等运算的数据结构。由于本次大整数的实现并非重点，我直接使用了 Github 上的一个用 c++ 实现的大整数，[这里是链接](https://github.com/faheel/BigInt)。
+在加密函数内部，数值之间的计算显然是在整数的形式下进行的，同时 RSA 算法要求密钥是极大的大整数(数百甚至数千位)，因此需要选用一种能表示无限位数的整数，且实现了乘法、取模等运算的数据结构。由于本次大整数的实现并非重点，我直接使用了 Github 上的一个 c++ 的大整数类型 `BigInt`，[这里是链接](https://github.com/faheel/BigInt)。
 
 ## 其他数据结构
 
@@ -208,7 +208,7 @@ string Encoding(string M, BigInt n)
 
     if(bytesOfM > bytesOfN - 11) throw invalid_argument("message too long");
 
-    // EM: initially 0x00 || 0x02, which is 0x0002 = 2
+    // EM: initially 0x00 || 0x02
     string EM = "";
     EM += "00";
     EM += "02";
